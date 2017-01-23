@@ -70,3 +70,11 @@ body {
   font-size: 12px;
   color: #999;
 }
+
+.constructed-list {
+  display: none;
+}
+
+.arena-list {
+  display: none;
+}
