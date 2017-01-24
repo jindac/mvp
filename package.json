@@ -9,13 +9,16 @@
     "test": "live-server --open=./SpecRunner.html --port=8081",
     "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash",
     "start": "babel . -w --out-dir compiled --presets=es2015,react --ignore=node_modules,compiled,server --source-maps inline | live-server",
-    "server": "nodemon ./server/server.js localhost 3000"
+    "server": "nodemon ./server/server.js localhost 3000",
+    "dbcreate": "mysql -u root < server/schema.sql",
+    "dbenter" : "mysql -u root -p"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.2",
     "express": "^4.14.0",
     "jquery": "^2.2.1",
     "lodash": "^4.6.1",
+    "mysql": "^2.12.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   },
