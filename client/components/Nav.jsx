@@ -2,7 +2,7 @@ var Nav = () => (
   <nav className="navbar">
     <button id="constructed-button" onClick={ () => { $('.constructed-list').toggle(); }}>Constructed</button>
     <div className="constructed-list">
-      <div onClick={() => { console.log('clicked!'); } }>
+      <div onClick={() => { console.log($(this), 'clicked!'); } }>
         Con Deck 1
       </div>
       <div onClick={() => { console.log('clicked!'); } }>
