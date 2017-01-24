@@ -1,24 +1,10 @@
-var Nav = () => (
+var Nav = (props) => (
   <nav className="navbar">
-    <button id="constructed-button" onClick={ () => { $('.constructed-list').toggle(); }}>Constructed</button>
-    <div className="constructed-list">
-      <div onClick={() => { console.log($(this), 'clicked!'); } }>
-        Con Deck 1
-      </div>
-      <div onClick={() => { console.log('clicked!'); } }>
-        Con Deck 2
-      </div>
+    <div className="col-md-6 col-md-offset-3">
+      <button id="constructed-button" onClick={ () => { props.setCurrentTab('Constructed'); }}>Constructed</button>
+      <button id="arena-button" onClick={ () => { props.setCurrentTab('Arena'); }}>Arena</button>
+      <button id="build-button" onClick={ () => { props.setCurrentTab('Build'); }}>Add Deck</button>
     </div>
-    <button id="arena-button" onClick={ () => { $('.arena-list').toggle(); }}>Arena</button>
-    <div className="arena-list">
-      <div onClick={() => { console.log('clicked!'); } }>
-        Arena Deck 1
-      </div>
-      <div onClick={() => { console.log('clicked!'); } }>
-        Arena Deck 2
-      </div>
-    </div>
-    <div className="col-md-6 col-md-offset-3"></div>
   </nav>
 );
 
