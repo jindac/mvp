@@ -4,13 +4,32 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cardImage: null,
+      cardName: null,
+      cardImages: ['http://media.services.zam.com/v1/media/byName/hs/cards/enus/CS2_072.png', 'http://media.services.zam.com/v1/media/byName/hs/cards/enus/CS2_041.png', 'http://media.services.zam.com/v1/media/byName/hs/cards/enus/EX1_169.png'],
       currentTab: 'Arena'
     };
   }
 
-  getCardImage(carName, callback) {
-    $.get('https://www.googleapis.com/youtube/v3/search', {
+  setCurrentTab(tab) {
+    this.setState({
+      currentTab: tab
+    });
+  }
+
+  setCardImages(e) {
+    this.getCardImages(e.target.value, (images) => {
+      this.setState({
+        cardImages: images
+      });
+    });
+    this.setState({
+      cardName: e.target.value
+    });
+    console.log('Searching for ', this.state.cardName);
+  }
+
+  getCardImages(cardName, callback) {
+    $.get('https://localhost:3000', {
       cardName: cardName
     })
     .done(({image}) => {
@@ -22,12 +41,6 @@ class App extends React.Component {
       responseJSON.error.errors.forEach((err) =>
         console.error(err)
       );
-    });
-  }
-
-  setCurrentTab(tab) {
-    this.setState({
-      currentTab: tab
     });
   }
 
@@ -53,7 +66,7 @@ class App extends React.Component {
         <div>
           <h1>HS Deck Master</h1>
           <Nav setCurrentTab={this.setCurrentTab.bind(this)}></Nav>
-          <Build />
+          <Build setCardImages={this.setCardImages.bind(this)} cardImages={this.state.cardImages} />
         </div>
       );
     }
