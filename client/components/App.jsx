@@ -17,11 +17,11 @@ class App extends React.Component {
   }
 
   setCardImages(e) {
-    this.getCardImages(e.target.value, (images) => {
+    this.getCardImages(e.target.value, ((images) => {
       this.setState({
         cardImages: images
       });
-    });
+    }).bind(this));
     this.setState({
       cardName: e.target.value
     });
@@ -29,18 +29,8 @@ class App extends React.Component {
   }
 
   getCardImages(cardName, callback) {
-    $.get('https://localhost:3000', {
-      cardName: cardName
-    })
-    .done(({image}) => {
-      if (callback) {
-        callback(image);
-      }
-    })
-    .fail(({responseJSON}) => {
-      responseJSON.error.errors.forEach((err) =>
-        console.error(err)
-      );
+    $.get('http://localhost:3000/cards', (images) => {
+      callback(images);
     });
   }
 

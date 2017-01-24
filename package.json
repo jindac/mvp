@@ -11,10 +11,11 @@
     "start": "babel . -w --out-dir compiled --presets=es2015,react --ignore=node_modules,compiled,server --source-maps inline | live-server",
     "server": "nodemon ./server/server.js localhost 3000",
     "dbcreate": "mysql -u root < server/schema.sql",
-    "dbenter" : "mysql -u root -p"
+    "dbenter": "mysql -u root -p"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.2",
+    "cors": "^2.8.1",
     "express": "^4.14.0",
     "jquery": "^2.2.1",
     "lodash": "^4.6.1",

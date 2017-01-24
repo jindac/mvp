@@ -1,9 +1,11 @@
 var db = require('../db');
+var models = require('../models');
 
 module.exports = {
   cards: {
     get: function (req, res) {
-      models.cards.getImage('Backstab', function(err, results) {
+      console.log('url ====> ', req.url);
+      models.cards.getImage(undefined, function(err, results) {
         if (err) {
           console.log(err);
         }

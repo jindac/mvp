@@ -1,7 +1,10 @@
 var express = require('express');
 var controllers = require('./controllers');
 var app = express();
+var cors = require('cors');
 
+app.use(cors());
+app.options('*', cors());
 app.listen(3000, function() {
   console.log('listening to ', 3000);
 });

@@ -9,8 +9,9 @@ class Build extends React.Component {
         <input class='cardSearch' onChange={this.props.setCardImages}></input>
         <div>
           {this.props.cardImages.map((card) => (
-            <Card card={card} />
-          ))}
+              <Card card={card.image_src} />
+            )
+          )}
         </div>
       </div>
     );
