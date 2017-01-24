@@ -1,5 +1,5 @@
 var express = require('express');
-var controller = require('./controllers');
+var controllers = require('./controllers');
 var app = express();
 
 app.listen(3000, function() {
