@@ -2,6 +2,7 @@ var express = require('express');
 var controllers = require('./controllers');
 var app = express();
 var cors = require('cors');
+var loadDB = require('./loadDB/loadDB.js');
 
 app.use(cors());
 app.options('*', cors());

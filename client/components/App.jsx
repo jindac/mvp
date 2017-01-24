@@ -29,9 +29,16 @@ class App extends React.Component {
   }
 
   getCardImages(cardName, callback) {
-    $.get('http://localhost:3000/cards', (images) => {
-      callback(images);
-    });
+    var request = () => {
+      $.get('http://localhost:3000/cards', {cardName: cardName}).done((images) => {
+        callback(images);
+      });
+    };
+
+    var debRequest = _.debounce(request, 200);
+    if (cardName !== '') {
+      debRequest();
+    }
   }
 
   render() {
