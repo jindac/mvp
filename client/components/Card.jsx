@@ -1,5 +1,5 @@
 var Card = (props) => (
-  <img src={props.card} />
+  <img className={`${props.name}`} src={props.card} onClick={props.addCard} />
 );
 
 window.Card = Card;

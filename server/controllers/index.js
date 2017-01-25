@@ -14,6 +14,7 @@ module.exports = {
         if (err) {
           console.log(err);
         }
+        console.log('name ===>', results.name);
         res.json(results);
       });
     }
