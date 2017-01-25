@@ -19,32 +19,32 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
-  Hearthstone Deckbuilder
+  Hearthstone Deck Master
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
 
-  Hearthstone players can use Hearthstone Deckbuilder to plan and construct decks.
+  Hearthstone players can use Hearthstone Deck Master to plan and construct decks.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
-  Hearthstone Deckbuilder organizes cards for easy deck building in both contructed and arena play.
+  Hearthstone Deck Master filters cards by name for easy deck building.
 
 ## Problem ##
   > Describe the problem your product solves.
 
-  Hearthstone Deckbuilder allows for easy building Hearthstone decks in the chrome browser.
+  Hearthstone Deck Master allows easily building Hearthstone decks in the chrome browser.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
 
-  Hearthstone Deckbuilder is accessible through the chrome browser, allowing the user to construct decks without opening the Hearthstone client.
+  Hearthstone Deck Master is accessible through the chrome browser, allowing the user to construct decks without opening the Hearthstone client.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
 
-  "Build Hearthstone decks when you think of them!"
+  "HearthStone Deck Master allowed you to build Hearthstone decks when you think of them!"
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
@@ -59,4 +59,4 @@ Once the project moves into development, the press release can be used as a touc
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
 
-
+  Decks should be persisted in the database rather them just stored in memory.
