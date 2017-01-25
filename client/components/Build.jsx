@@ -53,6 +53,13 @@ class Build extends React.Component {
     }
   }
 
+  sendDeck() {
+    var deck = this.state.deck;
+    var deckName = prompt('What would like to call this deck?');
+    deck.deckName = deckName;
+    this.props.saveDeck(deck);
+  }
+
   render() {
     return (
       <div class="Build">
@@ -69,7 +76,7 @@ class Build extends React.Component {
               return (<li>{card.name}<span>{` x ${card.count}`}</span></li>);
             })}
             <li>{`Total Cards: ${this.state.deck.count}`}</li>
-            <button>Save Deck!</button>
+            <button onClick={this.sendDeck.bind(this)}>Save Deck!</button>
           </ul>
         </div>
       </div>

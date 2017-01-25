@@ -6,8 +6,8 @@ class App extends React.Component {
     this.state = {
       cardName: null,
       cardImages: [],
-      currentTab: 'Build'
-      // decklist: [{name: 'test'}]
+      currentTab: 'Build',
+      decks: []
     };
   }
 
@@ -42,13 +42,21 @@ class App extends React.Component {
     }
   }
 
+  saveDeck(deck) {
+    var decks = this.state.decks;
+    decks.push(deck);
+    this.setState({
+      decks: decks
+    });
+  }
+
   render() {
-    if (this.state.currentTab === 'Constructed') {
+    if (this.state.currentTab === 'Decks') {
       return (
         <div>
           <h1>HS Deck Master</h1>
           <Nav setCurrentTab={this.setCurrentTab.bind(this)} />
-          <Constructed />
+          <Decks decks={this.state.decks} />
         </div>
       );
     } else if (this.state.currentTab === 'Build') {
@@ -56,7 +64,7 @@ class App extends React.Component {
         <div>
           <h1>HS Deck Master</h1>
           <Nav setCurrentTab={this.setCurrentTab.bind(this)}></Nav>
-          <Build setCardImages={this.setCardImages.bind(this)} cardImages={this.state.cardImages} decklist={this.state.decklist} />
+          <Build setCardImages={this.setCardImages.bind(this)} cardImages={this.state.cardImages} decks={this.state.decks} saveDeck={this.saveDeck.bind(this)} />
         </div>
       );
     }

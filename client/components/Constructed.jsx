@@ -1,12 +1,33 @@
-var Constructed = (props) => (
-  <div class="constructed-list">
-    <div onClick={() => { console.log($(this), 'clicked!'); } }>
-      Con Deck 1
-    </div>
-    <div onClick={() => { console.log('clicked!'); } }>
-      Con Deck 2
-    </div>
-  </div>
-);
+class Decks extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-window.Constructed = Constructed;
+  toggleDeck(e) {
+    $(e.target).next().toggle();
+  }
+
+  render () {
+    return (
+      <div class="Decks-list">
+        {this.props.decks.map((deck) => {
+          return (
+            <div>
+              <button onClick={this.toggleDeck} className="deckline">{deck.deckName}</button>
+              <ul>
+                {deck.decklist.map((card) => {
+                  return (
+                    <li>{card.name}<span>{` x ${card.count}`}</span></li>
+                  );
+                })}
+                <li>{`Total Cards: ${deck.count}`}</li>
+              </ul>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+}
+
+window.Decks = Decks;

@@ -1,6 +1,6 @@
 var Nav = (props) => (
   <div className="col-md-6 col-md-offset-3">
-    <button id="constructed-button" onClick={ () => { props.setCurrentTab('Constructed'); }}>Decks</button>
+    <button id="Decks-button" onClick={ () => { props.setCurrentTab('Decks'); }}>Decks</button>
     <button id="build-button" onClick={ () => { props.setCurrentTab('Build'); }}>Add Deck</button>
   </div>
 );

@@ -27,6 +27,10 @@ ul {
   list-style-type: none;
 }
 
+button.deckline {
+  width: 100%;
+}
+
 .navbar {
   background: #fff;
   margin-bottom: 20px;
